@@ -7,6 +7,7 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
+import Superstitions from './pages/Superstitions/Superstitions'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 // components
@@ -15,19 +16,21 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
-import * as profileService from "./services/profileService"
+import * as profileService from './services/profileService'
+import * as superstitionService from './services/superstitionService'
 
 // stylesheets
 import './App.css'
 
 // types
-import { User, Profile } from './types/models'
+import { User, Profile, Superstition } from './types/models'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
   
   const [user, setUser] = useState<User | null>(authService.getUser())
   const [profiles, setProfiles] = useState<Profile[]>([])
+  const [superstitions, setSuperstitions] = useState<Superstition[]>([])
 
   const handleLogout = (): void => {
     authService.logout()
@@ -40,7 +43,7 @@ function App(): JSX.Element {
   }
 
   useEffect((): void => {
-    const fetchProfiles =async (): Promise<void> => {
+    const fetchProfiles = async (): Promise<void> => {
       try {
         const profileData: Profile[] = await profileService.getAllProfiles()
         setProfiles(profileData)
@@ -49,6 +52,18 @@ function App(): JSX.Element {
       }
     }
     user ? fetchProfiles()  : setProfiles([])
+  }, [user])
+
+  useEffect((): void => {
+    const fetchSuperstitions = async (): Promise<void> => {
+      try {
+        const superstitionData: Superstition[] = await superstitionService.fetchSuperstitions()
+        setSuperstitions(superstitionData)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    user ? fetchSuperstitions() : setSuperstitions([])
   }, [user])
 
   return (
@@ -69,6 +84,14 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <Profiles profiles={profiles} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/superstitions"
+          element={
+            <ProtectedRoute user={user}>
+              <Superstitions superstitions={superstitions} />
             </ProtectedRoute>
           }
         />
