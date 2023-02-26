@@ -20,3 +20,13 @@ export interface User {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface Superstition {
+  title: string;
+  profile: { id: number };
+  id: number;
+  description: string;
+  category: string;
+  createdAt: string;
+  updatedAt: string;
+}
