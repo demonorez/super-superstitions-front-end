@@ -12,11 +12,10 @@ const Superstitions = (props: SuperstitionProps): JSX.Element => {
 
   return (
     <>
-    <main>
+      <h1>Superstitions</h1>
       {superstitions.map((superstition: Superstition) => 
         <p key={superstition.id}> {superstition.title}</p>
       )}
-    </main>
     </>
   )
 }
