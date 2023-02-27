@@ -1,4 +1,6 @@
-import { Superstition } from "../../types/models";
+import { Superstition } from "../../types/models"
+
+import SuperstitionCard from "../../components/SuperstitionCard/SuperstitionCard"
 
 interface SuperstitionProps {
   superstitions: Superstition[]
@@ -8,16 +10,15 @@ const Superstitions = (props: SuperstitionProps): JSX.Element => {
 
   const {superstitions} = props
 
-  if(!superstitions.length) return <p>No Superstitions Exist</p>
+  if(!superstitions.length) return <p>No Superstitions Exist(yeah right)</p>
 
   return (
-    <>
-      <h1>Superstitions</h1>
+    <main className='superstitionList'> 
       {superstitions.map((superstition: Superstition) => 
-        <p key={superstition.id}> {superstition.title}</p>
+        <SuperstitionCard key={superstition.id} superstition={superstition}/>
       )}
-    </>
+    </main>
   )
 }
 
-export default Superstitions
+export default Superstitions 
