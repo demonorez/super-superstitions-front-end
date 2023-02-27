@@ -30,3 +30,4 @@ export interface Superstition {
   createdAt: string;
   updatedAt: string;
 }
+

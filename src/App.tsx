@@ -8,7 +8,6 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 // import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
-import NewSuperstition from './pages/NewSuperstition/NewSuperstition'
 import Superstitions from './pages/Superstitions/Superstitions'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
@@ -97,14 +96,6 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         /> */}
-        <Route 
-          path="/new-superstition"
-          element={
-            <ProtectedRoute user={user}>
-              <NewSuperstition />
-            </ProtectedRoute>
-          }
-        />
         <Route
           path="/superstitions"
           element={

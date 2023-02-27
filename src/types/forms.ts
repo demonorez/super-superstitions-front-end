@@ -25,3 +25,9 @@ export interface ChangePasswordFormData {
 export interface PhotoFormData {
   photo: File | null;
 }
+
+export interface NewSuperstitionFormData { 
+  title: string;
+  description: string;
+  category: string;
+}
