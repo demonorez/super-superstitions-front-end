@@ -27,8 +27,7 @@ async function NewSuperstion(formData: NewSuperstitionFormData): Promise<Superst
       },
       body: JSON.stringify(formData),
     })
-    const superstition = await res.json()
-    return superstition as Superstition
+    return await res.json() as Superstition
   } catch (error) {
     throw error
   }

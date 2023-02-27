@@ -7,8 +7,8 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
-// import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import Superstitions from './pages/Superstitions/Superstitions'
+import NewSuperstition from './pages/NewSuperstition/NewSuperstition'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 // components
@@ -25,6 +25,7 @@ import './App.css'
 
 // types
 import { User, Profile, Superstition } from './types/models'
+import { NewSuperstitionFormData } from './types/forms'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
@@ -41,6 +42,12 @@ function App(): JSX.Element {
 
   const handleAuthEvt = (): void => {
     setUser(authService.getUser())
+  }
+
+  const handleNewSuperstition =async (superstitionData: NewSuperstitionFormData): Promise<void> => {
+    const newSuperstition = await superstitionService.NewSuperstion(superstitionData)
+    setSuperstitions([newSuperstition, ...superstitions])
+    navigate('/superstitions')
   }
 
   useEffect((): void => {
@@ -101,6 +108,14 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <Superstitions superstitions={superstitions} />
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path="/new-superstition"
+          element={
+            <ProtectedRoute user={user}>
+              <NewSuperstition handleNewSuperstition={handleNewSuperstition} />
             </ProtectedRoute>
           }
         />
