@@ -10,7 +10,7 @@ const SuperstitionCard = (props: SuperstitionProps): JSX.Element => {
 
   return (
     <article>
-      <h1>{superstition.title}</h1>
+      <h1>{superstition.title} {superstition.description}</h1>
     </article>
   )
 }
