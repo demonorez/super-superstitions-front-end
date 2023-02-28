@@ -17,7 +17,7 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
     category: ''
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target
     setForm(prevState => ({
       ...prevState,

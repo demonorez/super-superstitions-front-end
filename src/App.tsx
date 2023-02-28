@@ -46,19 +46,19 @@ function App(): JSX.Element {
   }
 
   const handleNewSuperstition = async (superstitionData: NewSuperstitionFormData): Promise<void> => {
-    const newSuperstition = await superstitionService.NewSuperstion(superstitionData)
+    const newSuperstition = await superstitionService.create(superstitionData)
     setSuperstitions([newSuperstition, ...superstitions])
     navigate('/superstitions')
   }
 
   const handleUpdateSuperstition = async (superstitionData: Superstition): Promise<void> => {
-    const UpdatedSuperstition = await superstitionService.UpdateSuperstition(superstitionData)
+    const UpdatedSuperstition = await superstitionService.update(superstitionData)
     setSuperstitions(superstitions.map((s) => superstitionData.id === s.id ? UpdatedSuperstition : s))
     navigate('/superstitions')
   }
 
   const handleDeleteSuperstition = async(id: number): Promise<void> => {
-    await superstitionService.DeleteSuperstition(id)
+    await superstitionService.deleteSuperstition(id)
     setSuperstitions(superstitions.filter(s => s.id !== id))
   }
 

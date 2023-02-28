@@ -17,7 +17,7 @@ async function fetchSuperstitions(): Promise<Superstition[]> {
   }
 }
 
-async function NewSuperstion(formData: NewSuperstitionFormData): Promise<Superstition> {
+async function create(formData: NewSuperstitionFormData): Promise<Superstition> {
   try {
     const res = await fetch(`${BASE_URL}`, {
       method: 'POST',
@@ -33,7 +33,7 @@ async function NewSuperstion(formData: NewSuperstitionFormData): Promise<Superst
   }
 }
 
-async function UpdateSuperstition(superstitionData: Superstition): Promise<Superstition> {
+async function update(superstitionData: Superstition): Promise<Superstition> {
   try {
     const res = await fetch(`${BASE_URL}/${superstitionData.id}`, {
       method: 'PUT',
@@ -49,7 +49,7 @@ async function UpdateSuperstition(superstitionData: Superstition): Promise<Super
   }
 }
 
-async function DeleteSuperstition(id: number): Promise<void> {
+async function deleteSuperstition(id: number): Promise<void> {
   try {
     const res = await fetch(`${BASE_URL}/${id}`, {
       method: 'DELETE',
@@ -63,4 +63,4 @@ async function DeleteSuperstition(id: number): Promise<void> {
   }
 }
 
-export { fetchSuperstitions, NewSuperstion, UpdateSuperstition, DeleteSuperstition }
+export { fetchSuperstitions, create, update, deleteSuperstition }
