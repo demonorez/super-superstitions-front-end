@@ -30,7 +30,7 @@ const UpdateSuperstition = (props: UpdateSuperstitionProps): JSX.Element => {
   }
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <label>Title: 
         <input 
           type="text"

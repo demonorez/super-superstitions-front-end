@@ -49,4 +49,18 @@ async function UpdateSuperstition(superstitionData: Superstition): Promise<Super
   }
 }
 
-export { fetchSuperstitions, NewSuperstion, UpdateSuperstition}
+async function DeleteSuperstition(id: number): Promise<void> {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+export { fetchSuperstitions, NewSuperstion, UpdateSuperstition, DeleteSuperstition }

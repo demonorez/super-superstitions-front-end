@@ -57,6 +57,11 @@ function App(): JSX.Element {
     navigate('/superstitions')
   }
 
+  const handleDeleteSuperstition = async(id: number): Promise<void> => {
+    await superstitionService.DeleteSuperstition(id)
+    setSuperstitions(superstitions.filter(s => s.id !== id))
+  }
+
   useEffect((): void => {
     const fetchProfiles = async (): Promise<void> => {
       try {
@@ -106,7 +111,7 @@ function App(): JSX.Element {
           path="/superstitions"
           element={
             <ProtectedRoute user={user}>
-              <Superstitions superstitions={superstitions} />
+              <Superstitions superstitions={superstitions} handleDeleteSuperstition={handleDeleteSuperstition} />
             </ProtectedRoute>
           }
         />
