@@ -33,4 +33,20 @@ async function NewSuperstion(formData: NewSuperstitionFormData): Promise<Superst
   }
 }
 
-export { fetchSuperstitions, NewSuperstion}
+async function UpdateSuperstition(superstitionData: Superstition): Promise<Superstition> {
+  try {
+    const res = await fetch(`${BASE_URL}/${superstitionData.id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(superstitionData)
+    })
+    return res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+export { fetchSuperstitions, NewSuperstion, UpdateSuperstition}

@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import Superstitions from './pages/Superstitions/Superstitions'
 import NewSuperstition from './pages/NewSuperstition/NewSuperstition'
+import UpdateSuperstition from './pages/UpdateSuperstition/UpdateSuperstition'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 // components
@@ -44,9 +45,15 @@ function App(): JSX.Element {
     setUser(authService.getUser())
   }
 
-  const handleNewSuperstition =async (superstitionData: NewSuperstitionFormData): Promise<void> => {
+  const handleNewSuperstition = async (superstitionData: NewSuperstitionFormData): Promise<void> => {
     const newSuperstition = await superstitionService.NewSuperstion(superstitionData)
     setSuperstitions([newSuperstition, ...superstitions])
+    navigate('/superstitions')
+  }
+
+  const handleUpdateSuperstition = async (superstitionData: Superstition): Promise<void> => {
+    const UpdatedSuperstition = await superstitionService.UpdateSuperstition(superstitionData)
+    setSuperstitions(superstitions.map((s) => superstitionData.id === s.id ? UpdatedSuperstition : s))
     navigate('/superstitions')
   }
 
@@ -95,14 +102,6 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
-        {/* <Route 
-          path="/profiles/:id"
-          element={
-            <ProtectedRoute user={user}>
-              <ProfileDetails />
-            </ProtectedRoute>
-          }
-        /> */}
         <Route
           path="/superstitions"
           element={
@@ -116,6 +115,14 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <NewSuperstition handleNewSuperstition={handleNewSuperstition} />
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path="/superstitions/:id/update"
+          element={
+            <ProtectedRoute user={user}>
+              <UpdateSuperstition handleUpdateSuperstition={handleUpdateSuperstition} />
             </ProtectedRoute>
           }
         />
