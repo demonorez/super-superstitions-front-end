@@ -3,7 +3,6 @@ import { useLocation } from "react-router"
 //types
 import { Superstition } from "../../types/models"
 import { NewSuperstitionFormData } from "../../types/forms"
-import styles from "./UpdateSuperstition.module.css"
 
 interface UpdateSuperstitionProps {
   handleUpdateSuperstition: (superstitionData: Superstition) => Promise<void>
@@ -32,49 +31,49 @@ const UpdateSuperstition = (props: UpdateSuperstitionProps): JSX.Element => {
   }
 
   return (
-    <main className={styles.body}>
+    <main className='body'>
     <form onSubmit={handleSubmit}>
-    <div className={styles.inputContainer}>
+    <div className='inputContainer'>
       <label>Title: </label>
         <input 
-          className={styles.input}
+          className='input'
           type="text"
           value={formData.title}
           onChange={handleChange}
           name="title"
         />
         </div>
-        <div className={styles.inputContainer}>
-          <label className={styles.label}>Image: </label>
+        <div className='inputContainer'>
+          <label className='label'>Image: </label>
           <input 
-            className={styles.input}
+            className='input'
             type="text"
             value={formData.image}
             onChange={handleChange}
             name="image"
           />
         </div>
-      <div className={styles.inputContainer}>
+      <div className='inputContainer'>
       <label>Description: </label>
         <input 
-          className={styles.input}
+          className='input'
           type="text"
           value={formData.description}
           onChange={handleChange}
           name="description"
           />
           </div>
-      <div className={styles.inputContainer}>
+      <div className='inputContainer'>
       <label>Category: </label>
         <input
-          className={styles.input}
+          className='input'
           type="text"
           value={formData.category}
           onChange={handleChange}
           name="category"
           />
           </div>
-      <button type="submit" className={styles.updateButton}>Update the Legend</button>
+      <button type="submit" className='button'>Update the Legend</button>
     </form>
     </main>
   )

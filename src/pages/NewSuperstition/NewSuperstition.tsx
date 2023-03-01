@@ -1,7 +1,5 @@
 import { useState } from "react"
 
-import styles from "./NewSuperstition.module.css"
-
 interface NewSuperstitionProps {
   handleNewSuperstition: (superstition: SuperstitionFormData) => void
 }
@@ -41,51 +39,51 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
   }
 
   return (
-    <main className={styles.bodyImage}>
-      <img src='favifaery.png' className={styles.image}/>
+    <main className='bodyImage'>
+      <img src='favifaery.png' className='image'/>
       <div>
       <form autoComplete="off" onSubmit={handleSubmit}>
-        <div className={styles.inputContainer}>
-        <label className={styles.label}>Title: </label>
+        <div className='inputContainer'>
+        <label className='label'>Title: </label>
           <input 
-            className={styles.input}
+            className='input'
             type="text"
             value={form.title}
             onChange={handleChange}
             name="title"
           />
         </div>
-        <div className={styles.inputContainer}>
-          <label className={styles.label}>Image: </label>
+        <div className='inputContainer'>
+          <label className='label'>Image: </label>
           <input 
-            className={styles.input}
+            className='input'
             type="text"
             value={form.image}
             onChange={handleChange}
             name="image"
           />
         </div>
-        <div className={styles.inputContainer}>
+        <div className='inputContainer'>
         <label>Description: </label>
           <input 
-            className={styles.input}
+            className='input'
             type="text"
             value={form.description}
             onChange={handleChange}
             name="description"
             />
         </div>
-        <div className={styles.inputContainer}>
+        <div className='inputContainer'>
         <label>Category: </label>
           <input
-            className={styles.input}
+            className='input'
             type="text"
             value={form.category}
             onChange={handleChange}
             name="category"
             />
         </div>
-        <button type="submit" className={styles.button}>Create Superstition</button>
+        <button type="submit" className='button'>Create Superstition</button>
       </form>
       </div>
     </main>
