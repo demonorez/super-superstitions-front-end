@@ -111,7 +111,7 @@ function App(): JSX.Element {
           path="/superstitions"
           element={
             <ProtectedRoute user={user}>
-              <Superstitions superstitions={superstitions} handleDeleteSuperstition={handleDeleteSuperstition} />
+              <Superstitions user={user} superstitions={superstitions} handleDeleteSuperstition={handleDeleteSuperstition} />
             </ProtectedRoute>
           }
         />
