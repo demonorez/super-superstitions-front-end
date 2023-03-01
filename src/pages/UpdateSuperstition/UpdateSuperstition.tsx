@@ -3,6 +3,7 @@ import { useLocation } from "react-router"
 //types
 import { Superstition } from "../../types/models"
 import { NewSuperstitionFormData } from "../../types/forms"
+import styles from "./UpdateSuperstition.module.css"
 
 interface UpdateSuperstitionProps {
   handleUpdateSuperstition: (superstitionData: Superstition) => Promise<void>
@@ -30,33 +31,41 @@ const UpdateSuperstition = (props: UpdateSuperstitionProps): JSX.Element => {
   }
 
   return (
+    <main className={styles.body}>
     <form onSubmit={handleSubmit}>
-      <label>Title: 
+    <div className={styles.inputContainer}>
+      <label>Title: </label>
         <input 
+          className={styles.input}
           type="text"
           value={formData.title}
           onChange={handleChange}
           name="title"
         />
-      </label>
-      <label>Description: 
+        </div>
+      <div className={styles.inputContainer}>
+      <label>Description: </label>
         <input 
+          className={styles.input}
           type="text"
           value={formData.description}
           onChange={handleChange}
           name="description"
           />
-      </label>
-      <label>Category: 
+          </div>
+      <div className={styles.inputContainer}>
+      <label>Category: </label>
         <input
+          className={styles.input}
           type="text"
           value={formData.category}
           onChange={handleChange}
           name="category"
           />
-      </label>
-      <button type="submit">Update the Legend</button>
+          </div>
+      <button type="submit" className={styles.updateButton}>Update the Legend</button>
     </form>
+    </main>
   )
 }
 

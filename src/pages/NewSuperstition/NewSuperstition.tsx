@@ -39,6 +39,8 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
 
   return (
     <main className={styles.bodyImage}>
+      <img src='favifaery.png' className={styles.image}/>
+      <div>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div className={styles.inputContainer}>
         <label className={styles.label}>Title: </label>
@@ -70,8 +72,9 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
             name="category"
             />
         </div>
-        <button type="submit">Create Superstition</button>
+        <button type="submit" className={styles.button}>Create Superstition</button>
       </form>
+      </div>
     </main>
   )
 }
