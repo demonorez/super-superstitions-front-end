@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import styles from "./NewSuperstition.module.css"
+
 interface NewSuperstitionProps {
   handleNewSuperstition: (superstition: SuperstitionFormData) => void
 }
@@ -37,6 +39,7 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
 
   return (
     <form autoComplete="off" onSubmit={handleSubmit}>
+      <div className={styles.inputContainer}>
       <label>Title: 
         <input 
           type="text"
@@ -45,6 +48,8 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
           name="title"
         />
       </label>
+      </div>
+      <div className={styles.inputContainer}>
       <label>Description: 
         <input 
           type="text"
@@ -53,6 +58,8 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
           name="description"
           />
       </label>
+      </div>
+      <div className={styles.inputContainer}>
       <label>Category: 
         <input
           type="text"
@@ -61,6 +68,7 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
           name="category"
           />
       </label>
+      </div>
       <button type="submit">Create Superstition</button>
     </form>
   )
