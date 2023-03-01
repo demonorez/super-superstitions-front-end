@@ -80,6 +80,11 @@ p {
   height: 30px;
 }
 
+.profile {
+  height: 400px;
+  width: 400px;
+}
+
 .image {
   height: 500px;
   width: 600px;
@@ -96,7 +101,7 @@ p {
   border: solid rgb(5, 68, 8);
   background-color: rgb(36, 5, 54);
   color: whitesmoke;
-  font-size: 32px;
+  font-size: 24px;
 } 
 
 .body{
@@ -105,28 +110,21 @@ p {
 }
 
 .container {
-  width: 40%;
+  width: 100%;
   height: 420px;
-  padding: 12px 21px;
   border-radius: 5px;
-  overflow: auto;
-  /* border: 1px solid var(--border); */
-  /* background-color: var(--card-background); */
-  /* box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25); */
-  /* -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25); */
-  /* -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25); */
 }
 
 .img {
   height: 300px;
-  width: 500px;
+  width: 450px;
 }
 
 .container h2 {
   width: 100%;
   font-size: 14px;
   font-weight: 400;
-  overflow: hidden;
+  overflow: auto;
   line-height: 1.5rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -134,4 +132,17 @@ p {
   text-align-last: left;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
+}
+
+.superstitionList {
+  gap: 200px;
+  display: grid;
+  padding: 21px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.profileList{
+  display: grid;
+  padding: 21px;
+  grid-template-columns: repeat(3, 1fr);
 }

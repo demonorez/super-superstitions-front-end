@@ -24,7 +24,7 @@ const UpdateSuperstition = (props: UpdateSuperstitionProps): JSX.Element => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  const handleSubmit = async (evt: React.FormEvent): Promise<void> => {
+  const handleSubmit = async (evt: React.FormEvent<HTMLFormElement>): Promise<void> => {
     evt.preventDefault()
     const updatedSuperstition = { ...superstition, ...formData }
     await handleUpdateSuperstition(updatedSuperstition)
@@ -32,9 +32,11 @@ const UpdateSuperstition = (props: UpdateSuperstitionProps): JSX.Element => {
 
   return (
     <main className='body'>
-    <form onSubmit={handleSubmit}>
+      <img src={formData.image} className='image'/>
+      <div>
+    <form autoComplete='off' onSubmit={handleSubmit}>
     <div className='inputContainer'>
-      <label>Title: </label>
+      <label className='label'>Title: </label>
         <input 
           className='input'
           type="text"
@@ -75,6 +77,7 @@ const UpdateSuperstition = (props: UpdateSuperstitionProps): JSX.Element => {
           </div>
       <button type="submit" className='button'>Update the Legend</button>
     </form>
+    </div>
     </main>
   )
 }

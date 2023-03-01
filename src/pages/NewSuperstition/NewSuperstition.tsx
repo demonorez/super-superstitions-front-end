@@ -42,49 +42,49 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
     <main className='bodyImage'>
       <img src='favifaery.png' className='image'/>
       <div>
-      <form autoComplete="off" onSubmit={handleSubmit}>
-        <div className='inputContainer'>
-        <label className='label'>Title: </label>
-          <input 
-            className='input'
-            type="text"
-            value={form.title}
-            onChange={handleChange}
-            name="title"
-          />
-        </div>
-        <div className='inputContainer'>
-          <label className='label'>Image: </label>
-          <input 
-            className='input'
-            type="text"
-            value={form.image}
-            onChange={handleChange}
-            name="image"
-          />
-        </div>
-        <div className='inputContainer'>
-        <label>Description: </label>
-          <input 
-            className='input'
-            type="text"
-            value={form.description}
-            onChange={handleChange}
-            name="description"
+        <form autoComplete='off' onSubmit={handleSubmit}>
+          <div className='inputContainer'>
+          <label className='label'>Title: </label>
+            <input 
+              className='input'
+              type="text"
+              value={form.title}
+              onChange={handleChange}
+              name="title"
             />
-        </div>
-        <div className='inputContainer'>
-        <label>Category: </label>
-          <input
-            className='input'
-            type="text"
-            value={form.category}
-            onChange={handleChange}
-            name="category"
+          </div>
+          <div className='inputContainer'>
+            <label className='label'>Image: </label>
+            <input 
+              className='input'
+              type="text"
+              value={form.image}
+              onChange={handleChange}
+              name="image"
             />
-        </div>
-        <button type="submit" className='button'>Create Superstition</button>
-      </form>
+          </div>
+          <div className='inputContainer'>
+            <label>Description: </label>
+            <input 
+              className='input'
+              type="text"
+              value={form.description}
+              onChange={handleChange}
+              name="description"
+              />
+          </div>
+          <div className='inputContainer'>
+            <label>Category: </label>
+            <input
+              className='input'
+              type="text"
+              value={form.category}
+              onChange={handleChange}
+              name="category"
+              />
+          </div>
+          <button type="submit" className='button'>Create Superstition</button>
+        </form>
       </div>
     </main>
   )
