@@ -5,8 +5,12 @@
 
 .inputContainer {
   margin-bottom: 1rem;
+  
 }
 
+.input {
+  
+}
 .bodyImage {
   background-image: url("favifaery.png");
   background-repeat: no-repeat;

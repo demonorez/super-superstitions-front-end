@@ -43,6 +43,7 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
         <div className={styles.inputContainer}>
         <label className={styles.label}>Title: </label>
           <input 
+            className={styles.input}
             type="text"
             value={form.title}
             onChange={handleChange}
@@ -52,6 +53,7 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
         <div className={styles.inputContainer}>
         <label>Description: </label>
           <input 
+            className={styles.input}
             type="text"
             value={form.description}
             onChange={handleChange}
@@ -61,6 +63,7 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
         <div className={styles.inputContainer}>
         <label>Category: </label>
           <input
+            className={styles.input}
             type="text"
             value={form.category}
             onChange={handleChange}
