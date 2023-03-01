@@ -38,39 +38,38 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
   }
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit}>
-      <div className={styles.inputContainer}>
-      <label>Title: 
-        <input 
-          type="text"
-          value={form.title}
-          onChange={handleChange}
-          name="title"
-        />
-      </label>
-      </div>
-      <div className={styles.inputContainer}>
-      <label>Description: 
-        <input 
-          type="text"
-          value={form.description}
-          onChange={handleChange}
-          name="description"
+    <main className={styles.bodyImage}>
+      <form autoComplete="off" onSubmit={handleSubmit}>
+        <div className={styles.inputContainer}>
+        <label className={styles.label}>Title: </label>
+          <input 
+            type="text"
+            value={form.title}
+            onChange={handleChange}
+            name="title"
           />
-      </label>
-      </div>
-      <div className={styles.inputContainer}>
-      <label>Category: 
-        <input
-          type="text"
-          value={form.category}
-          onChange={handleChange}
-          name="category"
-          />
-      </label>
-      </div>
-      <button type="submit">Create Superstition</button>
-    </form>
+        </div>
+        <div className={styles.inputContainer}>
+        <label>Description: </label>
+          <input 
+            type="text"
+            value={form.description}
+            onChange={handleChange}
+            name="description"
+            />
+        </div>
+        <div className={styles.inputContainer}>
+        <label>Category: </label>
+          <input
+            type="text"
+            value={form.category}
+            onChange={handleChange}
+            name="category"
+            />
+        </div>
+        <button type="submit">Create Superstition</button>
+      </form>
+    </main>
   )
 }
 
