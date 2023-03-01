@@ -29,3 +29,4 @@ Want to learn about aliens? What about dragons? Wonder about the third eye? Ther
 - [ ] Displaying posts in profiles
 - [ ] Saving posts to read later
 - [ ] Leave Comments
+- [ ] Upload photos directly from your computer for superstitions

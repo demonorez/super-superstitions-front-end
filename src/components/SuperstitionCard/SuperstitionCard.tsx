@@ -23,7 +23,7 @@ const SuperstitionCard = (props: SuperstitionProps): JSX.Element => {
       <h1>{superstition.title}</h1>
       <img className='img' src={superstition.image} />
       <button className='button' onClick={handleShow}>
-        {show ? 'Hide' : 'Show'} description
+        {show ? 'Hide' : 'Show'} Description
       </button>
       {show && <h2>{superstition.description}</h2>}
       {superstition.profileId === user?.id && (
