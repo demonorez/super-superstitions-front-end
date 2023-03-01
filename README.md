@@ -9,6 +9,10 @@ Want to learn about aliens? What about dragons? Wonder about the third eye? Ther
 
 ## [Back End Repo](https://github.com/demonorez/super-superstitions-back-end)
 
+
+# Known Bug
+* Sometimes the superstition won't post when trying to post. Not sure why.
+
 # [Attributions and thanks!](./attributions.md)
 
 ### Technologies Used
