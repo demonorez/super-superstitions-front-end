@@ -35,6 +35,4 @@ async function addPhoto(
   }
 }
 
-
-
 export { getAllProfiles, addPhoto }
