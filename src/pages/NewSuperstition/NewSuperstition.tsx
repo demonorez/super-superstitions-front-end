@@ -19,7 +19,7 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
     category: ''
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {name, value} = e.target
     setForm(prevState => ({
       ...prevState,
@@ -65,9 +65,8 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
           </div>
           <div className='inputContainer'>
             <label>Description: </label>
-            <input 
-              className='input'
-              type="text"
+            <textarea 
+              className='textarea'
               value={form.description}
               onChange={handleChange}
               name="description"

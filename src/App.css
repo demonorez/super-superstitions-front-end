@@ -78,6 +78,13 @@ p {
 .input {
   box-sizing: border-box;
   height: 30px;
+  border-radius: 4px;
+}
+
+.textarea { 
+  height: 150px;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .profile {

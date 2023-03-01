@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 // services
-import styles from './LoginForm.module.css'
 
 // stylesheets
 import * as authService from '../../services/authService'
@@ -46,14 +45,16 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
   }
 
   return (
+    <main className='login'>
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className={styles.container}
+      className='container'
     >
-      <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
+      <div className='inputContainer'>
+        <label htmlFor="email" className='label'>Email</label>
         <input
+          className="input"
           type="text"
           id="email"
           value={formData.email}
@@ -61,9 +62,10 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
+      <div className='inputContainer'>
+        <label htmlFor="password" className='label'>Password</label>
         <input
+          className="input"
           type="password"
           id="password"
           value={formData.password}
@@ -72,14 +74,15 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
         />
       </div>
       <div>
-        <button disabled={isFormInvalid()} className={styles.button}>
+        <button disabled={isFormInvalid()} className='button'>
           Log In
         </button>
         <Link to="/">
-          <button>Cancel</button>
+          <button className='button'>Cancel</button>
         </Link>
       </div>
     </form>
+    </main>
   )
 }
 

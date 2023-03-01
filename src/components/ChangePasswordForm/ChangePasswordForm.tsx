@@ -6,7 +6,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import * as authService from '../../services/authService'
 
 // stylesheets
-import styles from './ChangePasswordForm.module.css'
 
 // types
 import { AuthFormProps } from '../../types/props'
@@ -47,56 +46,61 @@ const ChangePasswordForm = (props: AuthFormProps): JSX.Element => {
   }
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className={styles.container}
-    >
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>
-          Current Password
-        </label>
-        <input
-          type="password"
-          id="oldPassword"
-          value={oldPassword}
-          name="oldPassword"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="newPassword" className={styles.label}>
-          New Password
-        </label>
-        <input
-          type="password"
-          id="newPassword"
-          value={newPassword}
-          name="newPassword"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="newPasswordConf" className={styles.label}>
-          Confirm New Password
-        </label>
-        <input
-          type="password"
-          id="newPasswordConf"
-          value={newPasswordConf}
-          name="newPasswordConf"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
-          Change Password
-        </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-      </div>
-    </form>
+    <main className='changePassword'>
+      <form
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        className='container'
+      >
+        <div className='inputContainer'>
+          <label htmlFor="password" className='label'>
+            Current Password
+          </label>
+          <input
+            className="input"
+            type="password"
+            id="oldPassword"
+            value={oldPassword}
+            name="oldPassword"
+            onChange={handleChange}
+          />
+        </div>
+        <div className='inputContainer'>
+          <label htmlFor="newPassword" className='label'>
+            New Password
+          </label>
+          <input
+            className="input"
+            type="password"
+            id="newPassword"
+            value={newPassword}
+            name="newPassword"
+            onChange={handleChange}
+          />
+        </div>
+        <div className='inputContainer'>
+          <label htmlFor="newPasswordConf" className='label'>
+            Confirm New Password
+          </label>
+          <input
+            className="input"
+            type="password"
+            id="newPasswordConf"
+            value={newPasswordConf}
+            name="newPasswordConf"
+            onChange={handleChange}
+          />
+        </div>
+        <div className='inputContainer'>
+          <button disabled={isFormInvalid()} className='button'>
+            Change Password
+          </button>
+          <Link to="/">
+            <button className='button'>Cancel</button>
+          </Link>
+        </div>
+      </form>
+    </main>
   )
 }
 

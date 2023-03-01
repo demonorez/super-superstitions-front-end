@@ -20,7 +20,7 @@ const UpdateSuperstition = (props: UpdateSuperstitionProps): JSX.Element => {
     category: superstition.category
   })
 
-  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
@@ -57,9 +57,8 @@ const UpdateSuperstition = (props: UpdateSuperstitionProps): JSX.Element => {
         </div>
       <div className='inputContainer'>
       <label>Description: </label>
-        <input 
-          className='input'
-          type="text"
+        <textarea 
+          className='textarea'
           value={formData.description}
           onChange={handleChange}
           name="description"
