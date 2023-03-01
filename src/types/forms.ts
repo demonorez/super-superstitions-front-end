@@ -28,6 +28,7 @@ export interface PhotoFormData {
 
 export interface NewSuperstitionFormData { 
   title: string;
+  image: string;
   description: string;
   category: string;
 }

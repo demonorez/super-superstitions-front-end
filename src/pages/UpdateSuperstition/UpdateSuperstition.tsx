@@ -16,6 +16,7 @@ const UpdateSuperstition = (props: UpdateSuperstitionProps): JSX.Element => {
 
   const [formData, setFormData] = useState<NewSuperstitionFormData>({
     title: superstition.title,
+    image: superstition.image,
     description: superstition.description,
     category: superstition.category
   })
@@ -42,6 +43,16 @@ const UpdateSuperstition = (props: UpdateSuperstitionProps): JSX.Element => {
           onChange={handleChange}
           name="title"
         />
+        </div>
+        <div className={styles.inputContainer}>
+          <label className={styles.label}>Image: </label>
+          <input 
+            className={styles.input}
+            type="text"
+            value={formData.image}
+            onChange={handleChange}
+            name="image"
+          />
         </div>
       <div className={styles.inputContainer}>
       <label>Description: </label>

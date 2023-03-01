@@ -8,6 +8,7 @@ interface NewSuperstitionProps {
 
 interface SuperstitionFormData {
   title: string;
+  image: string;
   description: string;
   category: string;
 }
@@ -15,6 +16,7 @@ interface SuperstitionFormData {
 const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
   const [form, setForm] = useState<SuperstitionFormData>({
     title: '',
+    image: '',
     description: '',
     category: ''
   })
@@ -32,6 +34,7 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
     props.handleNewSuperstition(form)
     setForm({
       title: '',
+      image: '',
       description: '',
       category: ''
     })
@@ -50,6 +53,16 @@ const NewSuperstition: React.FC<NewSuperstitionProps> = (props) => {
             value={form.title}
             onChange={handleChange}
             name="title"
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label className={styles.label}>Image: </label>
+          <input 
+            className={styles.input}
+            type="text"
+            value={form.image}
+            onChange={handleChange}
+            name="image"
           />
         </div>
         <div className={styles.inputContainer}>

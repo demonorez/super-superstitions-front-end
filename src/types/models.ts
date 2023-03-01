@@ -23,7 +23,8 @@ export interface User {
 
 export interface Superstition {
   title: string;
-  profileId: number
+  profileId: number;
+  image: string;
   id: number;
   description: string;
   category: string;

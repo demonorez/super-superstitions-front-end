@@ -17,6 +17,7 @@ const SuperstitionCard = (props: SuperstitionProps): JSX.Element => {
   return (
     <article>
       <h1>{superstition.title}</h1>
+      <img src={superstition.image} />
       <h2>{superstition.description}</h2>
       {superstition.profileId === user?.id && (
         <>
